@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --dark-blue: #003060;
+  --blue: #055c9d;
+  --light-blue: #0e86d4;
+  --lightest-blue: #68bbe3;
+  --hot-pink: #ff0080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}

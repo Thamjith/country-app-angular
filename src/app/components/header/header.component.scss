@@ -1,0 +1,34 @@
+.main-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+  background-color: var(--blue);
+  .logo {
+    font-weight: 700;
+    font-size: x-large;
+    .logo-A {
+    }
+    .logo-B {
+      color: var(--hot-pink);
+    }
+  }
+  .desktop-main-menu {
+    margin-right: 50px;
+    text-transform: uppercase;
+    ul {
+      display: flex;
+      li {
+        // todo reserch on position relative
+        // position: relative;
+        margin-right: 20px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+}
