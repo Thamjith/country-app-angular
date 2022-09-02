@@ -5,18 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CountryService } from './services/country.service';
+import { CountryListComponent } from './components/country-list/country-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, HeaderComponent, FooterComponent, CountryListComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [CountryService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
