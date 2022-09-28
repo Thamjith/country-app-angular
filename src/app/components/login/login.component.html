@@ -1,1 +1,79 @@
-<p>login works!</p>
+<section class="login-wrapper">
+  <div class="text-center eva_loader">
+    <h1>Login</h1>
+    <ngx-spinner type="triangle-skew-spin"></ngx-spinner>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 login-form form-sec">
+        <app-alert-modal
+          [alert]="alert_message"
+          [custom_class]="alert_class"
+          *ngIf="alert_message"
+          (close)="alert_message = null"
+        >
+        </app-alert-modal>
+        <h3 class="text-center">Evaluation Demo</h3>
+        <h4>Login</h4>
+        <form
+          [formGroup]="form"
+          (ngSubmit)="doLogin()"
+          class="login"
+          id="login"
+          action="javascript:void(0);"
+        >
+          <div id="res_alert"></div>
+          <div class="form-group">
+            <label class="">Email</label>
+            <input
+              type="text"
+              [ngClass]="err.email ? 'error' : ''"
+              class="form-control"
+              placeholder=""
+              formControlName="email"
+            />
+            <span
+              class="validation"
+              *ngIf="!form_validate_error('email', 'required')"
+              >Please enter the email address.</span
+            >
+            <span
+              class="validation"
+              *ngIf="!form_validate_error('email', 'email')"
+              >Please enter the valid email address.</span
+            >
+            <span class="validation" *ngIf="err.email">{{ err.email }}</span>
+          </div>
+          <div class="form-group">
+            <label class="">Password</label>
+            <input
+              type="password"
+              [ngClass]="err.password ? 'error' : ''"
+              class="form-control"
+              placeholder=""
+              formControlName="password"
+            />
+            <span
+              class="validation"
+              *ngIf="!form_validate_error('password', 'required')"
+              >Please enter the password.</span
+            >
+            <span class="validation" *ngIf="err.password">{{
+              err.password
+            }}</span>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="reg-link">
+            <a href="javascript:void(0);" routerLink="/user-registration"
+              >Don't have an account yet? Sign up now!</a
+            >
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</section>
