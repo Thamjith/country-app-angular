@@ -32,3 +32,37 @@ a {
 ul {
   list-style: none;
 }
+
+.form-section-inner {
+  float: left;
+  width: 100%;
+  padding: 50px 20px;
+  box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+}
+  
+.form-section-inner .form-submit{
+  float:right;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  color: #41464b;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group.form-radio-btn {
+  margin-top: 30px;
+}
+
+.form-group.form-radio-btn label {
+  padding-right: 10px;
+}
+.form-group.form-radio-btn input {
+  margin-right: 3px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

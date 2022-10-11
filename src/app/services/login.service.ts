@@ -6,7 +6,6 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginService {
   constructor(private titleService: Title) {}
-
   public saveSession(data: any) {
     //localStorage.clear();//initially
     localStorage.setItem('session_id', data.id);

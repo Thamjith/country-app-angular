@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LoginService } from 'src/app/services/login.service';
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private login: LoginService,
     private router: Router,
-    public fb: FormBuilder
+    public fb: UntypedFormBuilder
   ) {}
 
   ngOnInit(): void {
