@@ -4,13 +4,20 @@ import {
   CanActivate,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService
+  ) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -19,7 +26,30 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    console.log('test');
-    return true;
+    if (
+      this.authService.getSessionData('session_id') === null ||
+      !this.authService.getSessionData('session_id')
+    ) {
+      //console.log(route.data['page']);
+      if (route.data['page'] != 'login') {
+        this.router.navigate(['login']);
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      //console.log(route.data['page']);
+      if (route.data['page'] == 'login') {
+        this.router.navigate(['continents/Asia']);
+        return false;
+      } else {
+        return true;
+      }
+    }
   }
+
+  // public getSessionData(key: any) {
+  //   const result = localStorage.getItem(key);
+  //   return result;
+  // }
 }

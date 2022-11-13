@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private spinner: NgxSpinnerService,
-    private login: LoginService,
+    private login: AuthenticationService,
     private router: Router,
     public fb: UntypedFormBuilder
   ) {}
@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
   }
 
   public async doLogin() {
+    console.log('triggered');
     this.err = {};
     this.submitted = true;
     if (this.form.invalid) {

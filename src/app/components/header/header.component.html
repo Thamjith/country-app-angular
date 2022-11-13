@@ -1,15 +1,26 @@
 <div class="main-header">
   <div class="logo">
-    <a href="index.html">
+    <a routerLink="/continents/Asia" routerLinkActive="menu_active">
       <span class="logo-A">Country </span>
       <span class="logo-B">App</span>
     </a>
   </div>
   <nav class="desktop-main-menu">
     <ul>
-      <li><a href="falcon9.html">Favourites</a></li>
-      <li><a href="falcon-heavy.html">Logout</a></li>
-      <li><a href="dragon.html">Hi, THamjith</a></li>
+      <li>
+        <a routerLink="/favourite-countries" routerLinkActive="menu_active"
+          >Favourites</a
+        >
+      </li>
+      <li>
+        <a (click)="doLogout()" routerLinkActive="menu_active">Logout</a
+        ><i class="fa fa-sign-out" aria-hidden="true"></i>
+      </li>
+      <li class="logout">
+        <a routerLink="/edit-profile" routerLinkActive="menu_active"
+          >Hi, THamjith</a
+        >
+      </li>
     </ul>
   </nav>
 </div>

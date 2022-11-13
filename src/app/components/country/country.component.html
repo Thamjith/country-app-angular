@@ -1,0 +1,34 @@
+<app-header></app-header>
+<section class="content-wrapper">
+  <div class="text-center eva_loader">
+    <app-loading-spinner *ngIf="show_loader"></app-loading-spinner>
+  </div>
+  <div class="container">
+    <div class="head-common">
+      <h4 class="comn_title">View Country Details - {{ data.name }}</h4>
+      <!-- <div class="btn-sec">
+                <a routerLink="/payment-details" class="btn">All Payment Details</a>
+            </div> -->
+    </div>
+    <div class="view-data row">
+      <div class="col-md-9">
+        <div class="view-group">
+          <label>Name: </label>
+          <span>{{ data.name }}</span>
+        </div>
+        <div class="view-group">
+          <label>Continent: </label>
+          <span>{{ data.continent }}</span>
+        </div>
+        <div class="view-group">
+          <label>Currency Code: </label>
+          <span>{{ data.currencyCode }}</span>
+        </div>
+        <div class="view-group">
+          <label>Currency Name: </label>
+          <span>{{ data.currencyName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

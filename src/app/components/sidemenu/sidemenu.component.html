@@ -1,0 +1,84 @@
+<div class="sidebar open">
+  <div class="logo-details">
+    <i class="bx bxl-c-plus-plus icon"></i>
+    <div class="logo_name">Country App</div>
+    <i class="bx bx-menu" id="btn"></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+      <a routerLink="/continents/Asia" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">Asia</span>
+      </a>
+      <span class="tooltip">Asia</span>
+    </li>
+    <li>
+      <a routerLink="/continents/Africa" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">Africa</span>
+      </a>
+      <span class="tooltip">Africa</span>
+    </li>
+    <li>
+      <a routerLink="/continents/Europe" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">Europe</span>
+      </a>
+      <span class="tooltip">Europe</span>
+    </li>
+    <li>
+      <a routerLink="/continents/North-America" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">North America</span>
+      </a>
+      <span class="tooltip">North America</span>
+    </li>
+    <li>
+      <a routerLink="/continents/South-America" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">South America</span>
+      </a>
+      <span class="tooltip">South America</span>
+    </li>
+    <li>
+      <a routerLink="/continents/Australia" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">Australia</span>
+      </a>
+      <span class="tooltip">Australia</span>
+    </li>
+    <li>
+      <a routerLink="/continents/Antarctica" routerLinkActive="menu_active">
+        <i class="bx"></i>
+        <span class="links_name">Antarctica</span>
+      </a>
+      <span class="tooltip">Antarctica</span>
+    </li>
+
+    <ul class="sidebar-bottom">
+      <li>
+        <a routerLink="/favourite-countries" routerLinkActive="menu_active">
+          <i class="bx"></i>
+          <span class="links_name">Favourite Countries</span>
+        </a>
+        <span class="tooltip">Favourite Countries</span>
+      </li>
+
+      <li>
+        <a routerLink="/edit-profile" routerLinkActive="menu_active">
+          <i class="bx"></i>
+          <span class="links_name">Edit Profile</span>
+        </a>
+        <span class="tooltip">Edit Profile</span>
+      </li>
+
+      <li>
+        <a (click)="doLogout()">
+          <i class="bx"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    </ul>
+  </ul>
+</div>

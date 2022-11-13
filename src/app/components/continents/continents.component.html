@@ -1,0 +1,78 @@
+<app-sidemenu></app-sidemenu>
+<section class="content-wrapper">
+  <div class="text-center eva_loader">
+    <app-loading-spinner *ngIf="show_loader"></app-loading-spinner>
+  </div>
+  <div class="container">
+    <app-alert-modal
+      [alert]="alert_message"
+      [custom_class]="alert_class"
+      *ngIf="alert_message"
+      (close)="alert_message = null"
+    ></app-alert-modal>
+    <div class="user-list with-filter">
+      <div class="head-common">
+        <h4 class="comn_title">All Countries - {{ slug }}</h4>
+      </div>
+      <div class="tabel-sec">
+        <table
+          class="table tb_captain table-striped"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Currency Code</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of datalist | slice: start:end">
+              <td>{{ row.id }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.currencyCode }}</td>
+              <td>
+                <div class="comn-actions">
+                  <a
+                    routerLink="/country/view/{{ row.name }}"
+                    title="View"
+                    class="edit-btn action-btns"
+                    role="button"
+                  >
+                    <i class="fa fa-eye"></i
+                  ></a>
+                  <a
+                    *ngIf="!favourite_countries.includes(row.name + '')"
+                    (click)="add_favourite(row.name)"
+                    title="Favourite"
+                    class="favou-btn action-btns"
+                    role="button"
+                  >
+                    <i class="fa fa-star"></i
+                  ></a>
+                </div>
+              </td>
+            </tr>
+            <tr *ngIf="total_records == 0">
+              <td colspan="7">No records found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row" *ngIf="total_records != 0">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+          <div class="float-right">
+            <app-pagination
+              [totalRecords]="total_records"
+              [recordsPerPage]="limit"
+              (onPageChange)="displayActivePage($event)"
+            ></app-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
